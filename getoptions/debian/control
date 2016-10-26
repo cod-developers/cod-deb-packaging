@@ -1,0 +1,13 @@
+Source: getoptions
+Priority: extra
+Maintainer: Andrius Merkys <andrius.merkys@gmail.com>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.3
+Section: libs
+
+Package: getoptions
+Section: libdevel
+Architecture: any
+Depends: ${misc:Depends}
+Description: Command line argument processing library for C
+ <insert long description, indented with spaces>
