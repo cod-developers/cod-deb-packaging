@@ -25,4 +25,4 @@ ${DEBIAN_TAR_GZ}: source
 cleanAll distclean:
 	rm -rf source ${PKGNAME} ${PROJECT}
 	rm -f ${ORIG_TAR_GZ} ${DEBIAN_TAR_GZ}
-	rm -f *.dsc *_source.changes *_source.build
+	rm -f *.deb *.dsc *.changes *.build
