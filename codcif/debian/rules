@@ -13,7 +13,7 @@
 	dh $@
 
 build:
-	${MAKE}
+	${MAKE} LIB_DIRS= LIBFLAGS="-lcexceptions -lgetoptions"
 
 clean:
 	${MAKE} distclean
