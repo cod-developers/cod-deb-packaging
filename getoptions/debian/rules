@@ -20,10 +20,3 @@ clean:
 
 override_dh_auto_install:
 	${MAKE} install PREFIX=debian/getoptions/usr
-
-install: build
-	mkdir -p ${PREFIX}/include ${PREFIX}/lib
-	install *.h ${PREFIX}/include
-	install lib/libgetoptions.a lib/libgetoptions.so.0.01 ${PREFIX}/lib
-	ln -fs libgetoptions.so.0.01 ${PREFIX}/lib
-	ln -fs libgetoptions.so.0 ${PREFIX}/lib
