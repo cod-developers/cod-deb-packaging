@@ -17,7 +17,7 @@ source: ${CHANGELOG}
 ${DEBIAN_TAR_GZ}: source
 	mv source ${PKGNAME}
 	tar -c ${PKGNAME} | gzip > ${ORIG_TAR_GZ}
-	rsync -av --exclude .svn debian ${PKGNAME}
+	rsync -av --exclude .svn --exclude \*~ debian ${PKGNAME}
 	(cd ${PKGNAME}; debuild -S)
 	rm -rf ${PKGNAME}
 
