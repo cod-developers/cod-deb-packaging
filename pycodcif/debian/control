@@ -1,7 +1,7 @@
 Source: pycodcif
 Priority: extra
 Maintainer: Andrius Merkys <andrius.merkys@gmail.com>
-Build-Depends: debhelper (>= 8.0.0), codcif
+Build-Depends: debhelper (>= 8.0.0), codcif, getoptions, cexceptions
 Standards-Version: 3.9.3
 Section: libs
 

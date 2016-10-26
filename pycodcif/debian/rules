@@ -13,10 +13,10 @@
 	dh $@
 
 build:
-	${MAKE} -f Makelocal-SWIG-module
+	${MAKE} -f Makelocal-SWIG-module LIBRARIES=
 
 clean:
 	${MAKE} -f Makelocal-SWIG-module distclean
 
 override_dh_auto_install:
-	${MAKE} -f Makelocal-SWIG-module install PREFIX=debian/pycodcif/usr
+	${MAKE} -f Makelocal-SWIG-module install PREFIX=debian/pycodcif/usr LIBRARIES=
