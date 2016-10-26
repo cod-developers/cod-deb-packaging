@@ -18,7 +18,11 @@ build:
 clean:
 	${MAKE} distclean
 
+override_dh_auto_install:
+	${MAKE} install PREFIX=debian/cexceptions/usr
+
 install: build
+	mkdir -p ${PREFIX}/include ${PREFIX}/lib
 	install *.h ${PREFIX}/include
 	install lib/libcexceptions.a lib/libcexceptions.so.0.01 ${PREFIX}/lib
 	ln -fs libcexceptions.so.0.01 ${PREFIX}/lib
