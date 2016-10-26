@@ -18,10 +18,11 @@ ${DEBIAN_TAR_GZ}: source
 	mv source ${PKGNAME}
 	tar -c ${PKGNAME} | gzip > ${ORIG_TAR_GZ}
 	rsync -av --exclude .svn --exclude \*~ debian ${PKGNAME}
-	(cd ${PKGNAME}; debuild -S)
-	rm -rf ${PKGNAME}
+	mv ${PKGNAME} ${PROJECT}
+	(cd ${PROJECT}; debuild)
+	rm -rf ${PROJECT}
 
 cleanAll distclean:
-	rm -rf source ${PKGNAME}
+	rm -rf source ${PKGNAME} ${PROJECT}
 	rm -f ${ORIG_TAR_GZ} ${DEBIAN_TAR_GZ}
 	rm -f *.dsc *_source.changes *_source.build
