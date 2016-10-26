@@ -20,3 +20,8 @@ ${DEBIAN_TAR_GZ}: source
 	rsync -av --exclude .svn debian ${PKGNAME}
 	(cd ${PKGNAME}; debuild -S)
 	rm -rf ${PKGNAME}
+
+cleanAll distclean:
+	rm -rf source ${PKGNAME}
+	rm -f ${ORIG_TAR_GZ} ${DEBIAN_TAR_GZ}
+	rm -f *.dsc *_source.changes *_source.build
