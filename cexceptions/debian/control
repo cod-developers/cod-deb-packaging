@@ -9,5 +9,5 @@ Package: cexceptions
 Section: libdevel
 Architecture: any
 Depends: ${misc:Depends}
-Description: <insert up to 60 chars description>
+Description: C exception handling library
  <insert long description, indented with spaces>
