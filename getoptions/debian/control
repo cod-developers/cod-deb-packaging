@@ -1,7 +1,7 @@
 Source: getoptions
 Priority: extra
 Maintainer: Andrius Merkys <andrius.merkys@gmail.com>
-Build-Depends: debhelper (>= 8.0.0)
+Build-Depends: debhelper (>= 8.0.0), cexceptions
 Standards-Version: 3.9.3
 Section: libs
 
