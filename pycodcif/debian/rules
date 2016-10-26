@@ -19,4 +19,4 @@ clean:
 	${MAKE} -f Makelocal-SWIG-module distclean
 
 override_dh_auto_install:
-	${MAKE} install PREFIX=debian/codcif/usr
+	${MAKE} -f Makelocal-SWIG-module install PREFIX=debian/pycodcif/usr
