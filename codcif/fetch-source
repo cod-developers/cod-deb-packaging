@@ -1,3 +1,3 @@
 #!/bin/bash
 
-svn export -r4754 svn://www.crystallography.net/cod-tools/trunk/src/components/codcif source
+svn export -r4760 svn://www.crystallography.net/cod-tools/trunk/src/components/codcif source
