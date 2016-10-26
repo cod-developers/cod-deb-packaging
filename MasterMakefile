@@ -1,15 +1,22 @@
 PROJECT   = $(notdir $(shell pwd))
 CHANGELOG = debian/changelog
 
-VERSION = $(shell head -n 1 ${CHANGELOG} | perl -lne 'print $$1 if /\((.*?)-\d\)/')
+PKG_VERSION = $(shell head -n 1 ${CHANGELOG} | perl -lne 'print $$1 if /\((.*?-\d+)\)/')
+VERSION = $(shell echo ${PKG_VERSION} | perl -lne 'print $$1 if /^(.*?)-\d+$$/')
 
 PKGNAME = ${PROJECT}-${VERSION}
 
-all: ${PKGNAME}
+ORIG_TAR_GZ   = ${PROJECT}_${VERSION}.orig.tar.gz
+DEBIAN_TAR_GZ = ${PROJECT}_${PKG_VERSION}.debian.tar.gz
+
+all: ${DEBIAN_TAR_GZ}
 
 source: ${CHANGELOG}
 	./fetch-source
 
-${PKGNAME}: source
-	mv source $@
+${DEBIAN_TAR_GZ}: source
+	mv source ${PKGNAME}
+	tar -c ${PKGNAME} | gzip > ${ORIG_TAR_GZ}
 	rsync -av --exclude .svn debian ${PKGNAME}
+	(cd ${PKGNAME}; debuild -S)
+	rm -rf ${PKGNAME}
