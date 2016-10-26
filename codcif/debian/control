@@ -1,0 +1,13 @@
+Source: codcif
+Priority: extra
+Maintainer: Andrius Merkys <andrius.merkys@gmail.com>
+Build-Depends: debhelper (>= 8.0.0), cexceptions, getoptions
+Standards-Version: 3.9.3
+Section: libs
+
+Package: codcif
+Section: libdevel
+Architecture: any
+Depends: ${misc:Depends}
+Description: CIF parser in C language
+ <insert long description, indented with spaces>
