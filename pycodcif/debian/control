@@ -1,0 +1,13 @@
+Source: pycodcif
+Priority: extra
+Maintainer: Andrius Merkys <andrius.merkys@gmail.com>
+Build-Depends: debhelper (>= 8.0.0), codcif
+Standards-Version: 3.9.3
+Section: libs
+
+Package: pycodcif
+Section: libdevel
+Architecture: any
+Depends: ${misc:Depends}
+Description: CIF parser in Python language
+ <insert long description, indented with spaces>

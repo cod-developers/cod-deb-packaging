@@ -1,0 +1,3 @@
+#!/bin/bash
+
+svn export -r4760 svn://www.crystallography.net/cod-tools/trunk/src/lib/python2.7/dist-packages/cod/ccifparser source
