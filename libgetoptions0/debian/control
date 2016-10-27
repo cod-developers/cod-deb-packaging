@@ -1,11 +1,11 @@
-Source: getoptions
+Source: libgetoptions0
 Priority: extra
 Maintainer: Andrius Merkys <andrius.merkys@gmail.com>
 Build-Depends: debhelper (>= 8.0.0), libcexceptions0
 Standards-Version: 3.9.3
 Section: libs
 
-Package: getoptions
+Package: libgetoptions0
 Section: libdevel
 Architecture: any
 Depends: ${misc:Depends}
