@@ -13,10 +13,13 @@
 	dh $@
 
 build:
-	${MAKE}
+	${MAKE} PACKAGE=cexceptions EXTRA_LIB_DIRS=lib
 
 clean:
 	${MAKE} distclean
 
+override_dh_auto_build:
+	${MAKE} PACKAGE=cexceptions EXTRA_LIB_DIRS=lib
+
 override_dh_auto_install:
-	${MAKE} install PREFIX=debian/cexceptions/usr
+	${MAKE} install PREFIX=debian/libcexceptions0/usr PACKAGE=cexceptions EXTRA_LIB_DIRS=lib

@@ -1,7 +1,7 @@
 Source: codcif
 Priority: extra
 Maintainer: Andrius Merkys <andrius.merkys@gmail.com>
-Build-Depends: debhelper (>= 8.0.0), cexceptions, getoptions
+Build-Depends: debhelper (>= 8.0.0), libcexceptions0, getoptions
 Standards-Version: 3.9.3
 Section: libs
 

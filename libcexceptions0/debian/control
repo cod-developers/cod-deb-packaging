@@ -1,11 +1,11 @@
-Source: cexceptions
+Source: libcexceptions0
 Priority: extra
 Maintainer: Andrius Merkys <andrius.merkys@gmail.com>
 Build-Depends: debhelper (>= 8.0.0)
 Standards-Version: 3.9.3
 Section: libs
 
-Package: cexceptions
+Package: libcexceptions0
 Section: libdevel
 Architecture: any
 Depends: ${misc:Depends}
