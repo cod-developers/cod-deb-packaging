@@ -9,9 +9,11 @@ PKGNAME = ${PROJECT}-${VERSION}
 ORIG_TAR_GZ   = ${PROJECT}_${VERSION}.orig.tar.gz
 DEBIAN_TAR_GZ = ${PROJECT}_${PKG_VERSION}.debian.tar.gz
 
+DEBUILD_OPTS =
+
 all: ${DEBIAN_TAR_GZ}
 
-.PHONY: original orig
+.PHONY: original orig unsigned
 
 original orig: ${ORIG_TAR_GZ}
 
@@ -25,8 +27,11 @@ ${DEBIAN_TAR_GZ}: ${ORIG_TAR_GZ}
 	zcat $< | tar -xv
 	rsync -av --exclude .svn --exclude \*~ debian ${PKGNAME}
 	mv ${PKGNAME} ${PROJECT}
-	(cd ${PROJECT}; debuild)
+	(cd ${PROJECT}; debuild ${DEBUILD_OPTS})
 	rm -rf ${PROJECT}
+
+unsigned:
+	${MAKE} all DEBUILD_OPTS="-us -uc"
 
 cleanAll distclean:
 	rm -rf source ${PKGNAME} ${PROJECT}
