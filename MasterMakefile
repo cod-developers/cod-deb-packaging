@@ -11,6 +11,16 @@ DEBIAN_TAR_GZ = ${PROJECT}_${PKG_VERSION}.debian.tar.gz
 
 DEBUILD_OPTS =
 
+#------------------------------------------------------------------------------
+
+MAKELOCAL_FILES = ${filter-out %~, ${wildcard Makelocal*}}
+
+ifneq ("${MAKELOCAL_FILES}","")
+include ${MAKELOCAL_FILES}
+endif
+
+#------------------------------------------------------------------------------
+
 all: ${DEBIAN_TAR_GZ}
 
 .PHONY: original orig unsigned
@@ -37,8 +47,3 @@ cleanAll distclean:
 	rm -rf source ${PKGNAME} ${PROJECT}
 	rm -f ${ORIG_TAR_GZ} ${DEBIAN_TAR_GZ}
 	rm -f *.deb *.dsc *.changes *.build
-
-tests: ${ORIG_TAR_GZ}
-	zcat $< | tar -xv
-	${MAKE} -C ${PKGNAME} tests LIBS=
-	rm -rf ${PKGNAME}
