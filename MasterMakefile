@@ -11,6 +11,8 @@ DEBIAN_TAR_GZ = ${PROJECT}_${PKG_VERSION}.debian.tar.gz
 
 DEBUILD_OPTS =
 
+all: ${DEBIAN_TAR_GZ}
+
 #------------------------------------------------------------------------------
 
 MAKELOCAL_FILES = ${filter-out %~, ${wildcard Makelocal*}}
@@ -20,8 +22,6 @@ include ${MAKELOCAL_FILES}
 endif
 
 #------------------------------------------------------------------------------
-
-all: ${DEBIAN_TAR_GZ}
 
 .PHONY: original orig unsigned
 
