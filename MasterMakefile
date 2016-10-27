@@ -37,3 +37,8 @@ cleanAll distclean:
 	rm -rf source ${PKGNAME} ${PROJECT}
 	rm -f ${ORIG_TAR_GZ} ${DEBIAN_TAR_GZ}
 	rm -f *.deb *.dsc *.changes *.build
+
+tests: ${ORIG_TAR_GZ}
+	zcat $< | tar -xv
+	${MAKE} -C ${PKGNAME} tests LIBS=
+	rm -rf ${PKGNAME}
