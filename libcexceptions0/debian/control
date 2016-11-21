@@ -10,4 +10,6 @@ Section: libdevel
 Architecture: any
 Depends: ${misc:Depends}
 Description: C exception handling library
- <insert long description, indented with spaces>
+ Wrappers for C functions, allowing usage of try ... catch ... blocks in
+ C language. Wrapped functions include memory allocation, standard I/O
+ and strdup.
