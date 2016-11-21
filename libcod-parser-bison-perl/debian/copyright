@@ -1,6 +1,6 @@
 Format: http://dep.debian.net/deps/dep5
-Upstream-Name: COD::CIF::Parser::Bison
-Source: <svn://www.crystallography.net/cod-tools/trunk/src/lib/perl5/COD/CIF/Parser/Bison>
+Upstream-Name: cod-tools
+Source: <svn://www.crystallography.net/cod-tools/trunk>
 
 Files: *
 Copyright: 2008 Saulius Gražulis <grazulis@ibt.lt>
