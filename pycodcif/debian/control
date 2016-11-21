@@ -10,5 +10,8 @@ Package: pycodcif
 Section: libdevel
 Architecture: any
 Depends: ${misc:Depends}, ${python:Depends}, ${shlibs:Depends}
-Description: CIF parser in Python language
- <insert long description, indented with spaces>
+Description: Python bindings for CIF parser in C language
+ Python bindings for Crystallographic Information Format (CIF) parser,
+ which is written in C language. A CIF format file is represented by a
+ list of data blocks, where each data block is represented by a
+ dictionary.
