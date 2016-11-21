@@ -1,0 +1,3 @@
+# This is a small package which includes the runtime and the development
+# libraries:
+libcexceptions0 binary: non-dev-pkg-with-shlib-symlink
