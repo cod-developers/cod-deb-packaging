@@ -18,9 +18,9 @@ SRC_DIR = src/lib/perl5/COD/CIF/Parser/Bison
 	dh $@ --sourcedirectory ${SRC_DIR}
 
 override_dh_auto_install:
-	mkdir -p debian/libcod-parser-bison-perl/${vendorlib}/COD/CIF/Parser
-	mkdir -p debian/libcod-parser-bison-perl/${vendorarch}/auto/COD/CIF/Parser/Bison
+	mkdir -p debian/libcod-cif-parser-bison-perl/${vendorlib}/COD/CIF/Parser
+	mkdir -p debian/libcod-cif-parser-bison-perl/${vendorarch}/auto/COD/CIF/Parser/Bison
 	install --mode 640 ${SRC_DIR}/lib/COD/CIF/Parser/Bison.pm \
-	    debian/libcod-parser-bison-perl/${vendorlib}/COD/CIF/Parser/
+	    debian/libcod-cif-parser-bison-perl/${vendorlib}/COD/CIF/Parser/
 	install --mode 640 ${SRC_DIR}/lib/auto/COD/CIF/Parser/Bison/Bison.so \
-	    debian/libcod-parser-bison-perl/${vendorarch}/auto/COD/CIF/Parser/Bison/
+	    debian/libcod-cif-parser-bison-perl/${vendorarch}/auto/COD/CIF/Parser/Bison/
