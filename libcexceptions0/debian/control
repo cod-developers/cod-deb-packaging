@@ -8,7 +8,7 @@ Section: libs
 Package: libcexceptions0
 Section: libdevel
 Architecture: any
-Depends: ${misc:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: C exception handling library
  Wrappers for C functions, allowing usage of try ... catch ... blocks in
  C language. Wrapped functions include memory allocation, standard I/O

@@ -8,6 +8,6 @@ Section: libs
 Package: libgetoptions0
 Section: libdevel
 Architecture: any
-Depends: ${misc:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: Command line argument processing library for C
  <insert long description, indented with spaces>
