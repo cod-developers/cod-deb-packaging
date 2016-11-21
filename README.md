@@ -24,4 +24,8 @@ pycodcif
   |- libgetoptions0
   |    \- libcexceptions0
   \- libcexceptions0
+
+libcod-precision-perl
+
+libcod-usermessage-perl
 ```
