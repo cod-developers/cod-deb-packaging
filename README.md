@@ -16,6 +16,14 @@ Dependency tree
 ---------------
 
 ```
+libcod-cif-parser-bison-perl
+  |- codcif
+  |    |- libgetoptions0
+  |    |    \- libcexceptions0
+  |    \- libcexceptions0
+  |- libcod-precision-perl
+  \- libcod-usermessage-perl
+
 pycodcif
   |- codcif
   |    |- libgetoptions0
@@ -24,8 +32,4 @@ pycodcif
   |- libgetoptions0
   |    \- libcexceptions0
   \- libcexceptions0
-
-libcod-precision-perl
-
-libcod-usermessage-perl
 ```
