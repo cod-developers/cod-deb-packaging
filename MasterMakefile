@@ -8,6 +8,7 @@ PKGNAME = ${PROJECT}-${VERSION}
 
 ORIG_TAR_GZ   = ${PROJECT}_${VERSION}.orig.tar.gz
 DEBIAN_TAR_GZ = ${PROJECT}_${PKG_VERSION}.debian.tar.gz
+DEBIAN_TAR_XZ = ${PROJECT}_${PKG_VERSION}.debian.tar.xz
 
 DEBUILD_OPTS =
 
@@ -45,5 +46,5 @@ unsigned:
 
 cleanAll distclean:
 	rm -rf source ${PKGNAME} ${PROJECT}
-	rm -f ${ORIG_TAR_GZ} ${DEBIAN_TAR_GZ}
+	rm -f ${ORIG_TAR_GZ} ${DEBIAN_TAR_GZ} ${DEBIAN_TAR_XZ}
 	rm -f *.deb *.dsc *.changes *.build
