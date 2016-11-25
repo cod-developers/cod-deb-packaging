@@ -17,19 +17,20 @@ Dependency tree
 
 ```
 libcod-cif-parser-bison-perl
-  |- codcif
-  |    |- libgetoptions0
-  |    |    \- libcexceptions0
-  |    \- libcexceptions0
+  |- codcif (build)
+  |    |- libgetoptions0 (build)
+  |    |    \- libcexceptions0 (build)
+  |    \- libcexceptions0 (build)
+  |- libcexceptions0 (build)
   |- libcod-precision-perl
   \- libcod-usermessage-perl
 
 pycodcif
-  |- codcif
-  |    |- libgetoptions0
-  |    |    \- libcexceptions0
+  |- codcif (build)
+  |    |- libgetoptions0 (build)
+  |    |    \- libcexceptions0 (build)
   |    \- libcexceptions0
-  |- libgetoptions0
-  |    \- libcexceptions0
-  \- libcexceptions0
+  |- libgetoptions0 (build)
+  |    \- libcexceptions0 (build)
+  \- libcexceptions0 (build)
 ```

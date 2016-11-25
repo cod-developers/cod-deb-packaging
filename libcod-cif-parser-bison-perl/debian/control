@@ -1,14 +1,14 @@
 Source: libcod-cif-parser-bison-perl
 Priority: extra
 Maintainer: Andrius Merkys <andrius.merkys@gmail.com>
-Build-Depends: debhelper (>= 8.0.0)
+Build-Depends: debhelper (>= 8.0.0), codcif, libcexceptions0
 Standards-Version: 3.9.3
 Section: perl
 
 Package: libcod-cif-parser-bison-perl
 Section: perl
 Architecture: any
-Depends: ${shlibs:Depends}, ${perl:Depends}, ${misc:Depends}, codcif,
+Depends: ${shlibs:Depends}, ${perl:Depends}, ${misc:Depends},
     libcod-precision-perl, libcod-usermessage-perl
 Description: Perl bindings for COD CIF parser
  <insert long description, indented with spaces>
