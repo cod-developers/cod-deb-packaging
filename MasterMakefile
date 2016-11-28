@@ -10,7 +10,7 @@ ORIG_TAR_GZ   = ${PROJECT}_${VERSION}.orig.tar.gz
 DEBIAN_TAR_GZ = ${PROJECT}_${PKG_VERSION}.debian.tar.gz
 DEBIAN_TAR_XZ = ${PROJECT}_${PKG_VERSION}.debian.tar.xz
 
-DEBUILD_OPTS =
+DEBUILD_OPTS = -us -uc
 
 all: ${DEBIAN_TAR_GZ}
 
@@ -24,7 +24,7 @@ endif
 
 #------------------------------------------------------------------------------
 
-.PHONY: original orig unsigned
+.PHONY: original orig signed
 
 original orig: ${ORIG_TAR_GZ}
 
@@ -41,8 +41,8 @@ ${DEBIAN_TAR_GZ}: ${ORIG_TAR_GZ}
 	(cd ${PROJECT}; debuild ${DEBUILD_OPTS})
 	rm -rf ${PROJECT}
 
-unsigned:
-	${MAKE} all DEBUILD_OPTS="-us -uc"
+signed:
+	${MAKE} all DEBUILD_OPTS=
 
 cleanAll distclean:
 	rm -rf source ${PKGNAME} ${PROJECT}

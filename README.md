@@ -8,7 +8,7 @@ https://github.com/sauliusg/cod-tools.
 Installation
 ------------
 
-To build any of the packages, run ``make unsigned`` inside the package
+To build any of the packages, run ``make all`` inside the package
 subdirectories. Be aware that some of the packages depend on others in
 this collection. Please refer to the following dependency tree.
 
