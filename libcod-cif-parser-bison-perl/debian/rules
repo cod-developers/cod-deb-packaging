@@ -18,10 +18,10 @@ SRC_DIR = src/lib/perl5/COD/CIF/Parser/Bison
 	dh $@ --sourcedirectory ${SRC_DIR}
 
 override_dh_auto_build:
-	${MAKE} -C ${SRC_DIR} LIB_DIRS= LIB_FILES="-lcodcif -lcexceptions"
+	${MAKE} -C ${SRC_DIR} LIB_DIRS= LIBFLAGS="-lcexceptions -lcodcif"
 
 override_dh_auto_test:
-	${MAKE} -C ${SRC_DIR} tests LIB_DIRS= LIB_FILES="-lcodcif -lcexceptions"
+	${MAKE} -C ${SRC_DIR} tests LIB_DIRS= LIBFLAGS="-lcexceptions -lcodcif"
 
 override_dh_auto_install:
 	mkdir -p debian/libcod-cif-parser-bison-perl/${vendorlib}/COD/CIF/Parser
