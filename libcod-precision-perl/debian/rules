@@ -12,6 +12,8 @@
 %:
 	dh $@
 
+override_dh_auto_build override_dh_auto_test:
+
 override_dh_auto_install:
 	mkdir -p debian/libcod-precision-perl/usr/share/perl5/COD/
 	install Precision.pm debian/libcod-precision-perl/usr/share/perl5/COD/
