@@ -9,6 +9,6 @@ Package: libcod-cif-parser-bison-perl
 Section: perl
 Architecture: any
 Depends: ${shlibs:Depends}, ${perl:Depends}, ${misc:Depends},
-    libcod-precision-perl, libcod-usermessage-perl
+    ${misc:Pre-Depends}, libcod-precision-perl, libcod-usermessage-perl
 Description: Perl bindings for COD CIF parser
  <insert long description, indented with spaces>
