@@ -29,7 +29,7 @@ pycodcif
   |- codcif (build)
   |    |- libgetoptions0 (build)
   |    |    \- libcexceptions0 (build)
-  |    \- libcexceptions0
+  |    \- libcexceptions0 (build)
   |- libgetoptions0 (build)
   |    \- libcexceptions0 (build)
   \- libcexceptions0 (build)
