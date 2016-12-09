@@ -12,12 +12,6 @@
 %:
 	dh $@
 
-build:
-	${MAKE} PACKAGE=getoptions EXTRA_LIB_DIRS=lib
-
-clean:
-	${MAKE} distclean
-
 override_dh_auto_build:
 	${MAKE} PACKAGE=getoptions EXTRA_LIB_DIRS=lib
 
