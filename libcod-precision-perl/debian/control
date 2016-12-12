@@ -1,6 +1,7 @@
 Source: libcod-precision-perl
 Priority: extra
 Maintainer: Andrius Merkys <andrius.merkys@gmail.com>
+Homepage: http://wiki.crystallography.net/cod-tools/
 Build-Depends: debhelper (>= 8.0.0)
 Standards-Version: 3.9.3
 Section: perl
@@ -10,4 +11,5 @@ Section: perl
 Architecture: any
 Depends: ${misc:Depends}, ${perl:Depends}
 Description: COD precision handling module for Perl language
- <insert long description, indented with spaces>
+ COD::Precision, module for handling precision in Crystallographic
+ Information Format (CIF) notation.
