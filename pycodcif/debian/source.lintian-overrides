@@ -1,0 +1,4 @@
+# The source of the package is built using Makefile with a different file
+# name 'Makelocal-SWIG-module', thus 'makefiles' symlink is never used
+# and can be ignored.
+pycodcif source: source-contains-unsafe-symlink makefiles
