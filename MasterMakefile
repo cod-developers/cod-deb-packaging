@@ -1,5 +1,6 @@
 PROJECT   = $(notdir $(shell pwd))
 CHANGELOG = debian/changelog
+ARCH      = $(shell dpkg-deb --version | head -n 1 | perl -lne 'print $$1 if /\((.+?)\)/')
 
 PKG_VERSION = $(shell head -n 1 ${CHANGELOG} | perl -lne 'print $$1 if /\((.*?-\d+)\)/')
 VERSION = $(shell echo ${PKG_VERSION} | perl -lne 'print $$1 if /^(.*?)-\d+$$/')
@@ -9,6 +10,10 @@ PKGNAME = ${PROJECT}-${VERSION}
 ORIG_TAR_GZ   = ${PROJECT}_${VERSION}.orig.tar.gz
 DEBIAN_TAR_GZ = ${PROJECT}_${PKG_VERSION}.debian.tar.gz
 DEBIAN_TAR_XZ = ${PROJECT}_${PKG_VERSION}.debian.tar.xz
+
+DSC_FILE     = ${PROJECT}_${PKG_VERSION}.dsc
+CHANGES_FILE = ${PROJECT}_${PKG_VERSION}_${ARCH}.changes
+DEB_FILE     = ${PROJECT}_${PKG_VERSION}_${ARCH}.deb
 
 DEBUILD_OPTS = -us -uc
 
@@ -24,7 +29,7 @@ endif
 
 #------------------------------------------------------------------------------
 
-.PHONY: original orig signed
+.PHONY: original orig signed cleanAll distclean lint lintian
 
 original orig: ${ORIG_TAR_GZ}
 
@@ -43,6 +48,11 @@ ${DEBIAN_TAR_GZ}: ${ORIG_TAR_GZ}
 
 signed:
 	${MAKE} all DEBUILD_OPTS=
+
+lint lintian:
+	lintian --pedantic ${DSC_FILE}
+	lintian --pedantic ${CHANGES_FILE}
+	lintian --pedantic ${DEB_FILE}
 
 cleanAll distclean:
 	rm -rf source ${PKGNAME} ${PROJECT}
