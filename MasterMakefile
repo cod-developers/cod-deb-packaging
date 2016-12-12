@@ -50,9 +50,9 @@ signed:
 	${MAKE} all DEBUILD_OPTS=
 
 lint lintian:
-	lintian --pedantic ${DSC_FILE}
-	lintian --pedantic ${CHANGES_FILE}
-	lintian --pedantic ${DEB_FILE}
+	-lintian --pedantic ${DSC_FILE}
+	-lintian --pedantic ${CHANGES_FILE}
+	-lintian --pedantic ${DEB_FILE}
 
 cleanAll distclean:
 	rm -rf source ${PKGNAME} ${PROJECT}
