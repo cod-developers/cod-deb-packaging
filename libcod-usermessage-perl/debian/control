@@ -11,4 +11,8 @@ Section: perl
 Architecture: any
 Depends: ${misc:Depends}, ${perl:Depends}
 Description: COD message formatting module for Perl language
- <insert long description, indented with spaces>
+ COD::UserMessage, module for formatting error/warning/note messages in
+ a style, defined by Crystallography Open Database.
+ .
+ In short, the format of generated messages is the following:
+ <program name>: <location>: <STATUS>, <message body>.
