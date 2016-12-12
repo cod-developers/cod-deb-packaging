@@ -1,4 +1,4 @@
 # The source of the package does not need building (building and testing
 # using debhelper is disabled), thus 'makefiles' symlink is never used
-# and can be ignored:
+# and can be ignored.
 libcod-usermessage-perl source: source-contains-unsafe-symlink makefiles
