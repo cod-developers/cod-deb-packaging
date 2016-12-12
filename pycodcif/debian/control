@@ -1,6 +1,7 @@
 Source: pycodcif
 Priority: extra
 Maintainer: Andrius Merkys <andrius.merkys@gmail.com>
+Homepage: http://wiki.crystallography.net/cod-tools/
 Build-Depends: debhelper (>= 8.0.0), codcif, libgetoptions0, libcexceptions0,
     python2.7, python | python-all | python-dev | python-all-dev
 Standards-Version: 3.9.3
@@ -12,6 +13,7 @@ Architecture: any
 Depends: ${misc:Depends}, ${python:Depends}, ${shlibs:Depends}
 Description: Python bindings for CIF parser in C language
  Python bindings for Crystallographic Information Format (CIF) parser,
- which is written in C language. A CIF format file is represented by a
- list of data blocks, where each data block is represented by a
- dictionary.
+ which is written in C language, which is written in C language, and
+ developed by the Crystallography Open Database. A CIF format file is
+ represented by a list of data blocks, where each data block is
+ represented by a dictionary.
