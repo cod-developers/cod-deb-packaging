@@ -9,24 +9,14 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-vendorarch = $(shell perl -le 'use Config; print $$Config{vendorarch}')
 vendorlib  = $(shell perl -le 'use Config; print $$Config{vendorlib}')
 
-SRC_DIR = src/lib/perl5/COD/CIF/Parser/Bison
+SRC_DIR = src/lib/perl5/COD/CIF/Parser/Yapp
 
 %:
 	dh $@ --sourcedirectory ${SRC_DIR}
 
-override_dh_auto_build:
-	${MAKE} -C ${SRC_DIR} LIB_DIRS= LIBFLAGS="-lcodcif -lcexceptions"
-
-override_dh_auto_test:
-	${MAKE} -C ${SRC_DIR} tests LIB_DIRS= LIBFLAGS="-lcodcif -lcexceptions"
-
 override_dh_auto_install:
-	mkdir -p debian/libcod-cif-parser-bison-perl/${vendorlib}/COD/CIF/Parser
-	mkdir -p debian/libcod-cif-parser-bison-perl/${vendorarch}/auto/COD/CIF/Parser/Bison
-	install --mode 640 ${SRC_DIR}/lib/COD/CIF/Parser/Bison.pm \
-	    debian/libcod-cif-parser-bison-perl/${vendorlib}/COD/CIF/Parser/
-	install --mode 640 ${SRC_DIR}/lib/auto/COD/CIF/Parser/Bison/Bison.so \
-	    debian/libcod-cif-parser-bison-perl/${vendorarch}/auto/COD/CIF/Parser/Bison/
+	mkdir -p debian/libcod-cif-parser-yapp-perl/${vendorlib}/COD/CIF/Parser
+	install --mode 640 ${SRC_DIR}/lib/COD/CIF/Parser/Yapp.pm \
+	    debian/libcod-cif-parser-yapp-perl/${vendorlib}/COD/CIF/Parser/
