@@ -1,0 +1,3 @@
+#!/bin/bash
+
+svn export -r4783 svn://www.crystallography.net/cod-tools/trunk source
