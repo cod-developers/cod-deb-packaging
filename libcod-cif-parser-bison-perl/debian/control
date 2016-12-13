@@ -11,7 +11,7 @@ Section: perl
 Architecture: any
 Depends: ${shlibs:Depends}, ${perl:Depends}, ${misc:Depends},
     ${misc:Pre-Depends}, libcod-precision-perl, libcod-usermessage-perl
-Description: Python bindings for CIF parser in C language
+Description: error-fixing CIF 1.1 parser - Perl bindings
  COD::CIF::Parser:Bison, Perl bindings for Crystallographic Information
  Format (CIF) parser, which is written in C language, and developed by
  the Crystallography Open Database. A CIF format file is represented by
