@@ -13,3 +13,10 @@ Description: C exception handling library
  Wrappers for C functions, allowing usage of try ... catch ... blocks in
  C language. Wrapped functions include memory allocation, standard I/O
  and strdup.
+
+Package: libgetoptions0
+Section: libdevel
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Command line argument processing library for C
+ <insert long description, indented with spaces>

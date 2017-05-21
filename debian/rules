@@ -15,11 +15,18 @@ SRC_DIR = src/externals/cexceptions
 	dh $@ --sourcedirectory ${SRC_DIR}
 
 override_dh_auto_build:
-	${MAKE} PACKAGE=cexceptions EXTRA_LIB_DIRS=lib --directory ${SRC_DIR}
+	${MAKE} PACKAGE=cexceptions EXTRA_LIB_DIRS=lib \
+		--directory src/externals/cexceptions
+	${MAKE} PACKAGE=getoptions EXTRA_LIB_DIRS=../cexceptions/lib \
+		--directory src/externals/getoptions
 
 override_dh_auto_test:
 	${MAKE} PACKAGE=cexceptions EXTRA_LIB_DIRS=lib test --directory ${SRC_DIR}
 
 override_dh_auto_install:
 	${MAKE} install PREFIX=../../../debian/libcexceptions0/usr \
-		PACKAGE=cexceptions EXTRA_LIB_DIRS=lib --directory ${SRC_DIR}
+		PACKAGE=cexceptions EXTRA_LIB_DIRS=lib \
+		--directory src/externals/cexceptions
+	${MAKE} install PREFIX=../../../debian/libgetoptions0/usr \
+		PACKAGE=getoptions EXTRA_LIB_DIRS=lib \
+		--directory src/externals/getoptions
