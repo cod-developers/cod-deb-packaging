@@ -1,4 +1,4 @@
-PROJECT   = $(notdir $(shell pwd))
+PROJECT   = cod-tools
 CHANGELOG = debian/changelog
 ARCH      = $(shell dpkg-deb --version | head -n 1 | perl -lne 'print $$1 if /\((.+?)\)/')
 
