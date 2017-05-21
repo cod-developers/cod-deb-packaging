@@ -21,6 +21,15 @@ Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: Command line argument processing library for C
  <insert long description, indented with spaces>
 
+Package: codcif
+Section: libdevel
+Architecture: any
+Depends: ${misc:Depends}
+Description: error-fixing CIF 1.1 parser
+ Parser for Crystallographic Information Format (CIF), written in C
+ language. A CIF format file is represented by an array of data blocks,
+ where each data block is represented by a CIF struct.
+
 Package: libcod-cif-parser-yapp-perl
 Section: perl
 Architecture: all
