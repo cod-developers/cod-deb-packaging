@@ -9,14 +9,17 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
+SRC_DIR = src/externals/cexceptions
+
 %:
-	dh $@
+	dh $@ --sourcedirectory ${SRC_DIR}
 
 override_dh_auto_build:
-	${MAKE} PACKAGE=cexceptions EXTRA_LIB_DIRS=lib
+	${MAKE} PACKAGE=cexceptions EXTRA_LIB_DIRS=lib --directory ${SRC_DIR}
 
 override_dh_auto_test:
-	${MAKE} PACKAGE=cexceptions EXTRA_LIB_DIRS=lib test
+	${MAKE} PACKAGE=cexceptions EXTRA_LIB_DIRS=lib test --directory ${SRC_DIR}
 
 override_dh_auto_install:
-	${MAKE} install PREFIX=debian/libcexceptions0/usr PACKAGE=cexceptions EXTRA_LIB_DIRS=lib
+	${MAKE} install PREFIX=../../../debian/libcexceptions0/usr \
+		PACKAGE=cexceptions EXTRA_LIB_DIRS=lib --directory ${SRC_DIR}
