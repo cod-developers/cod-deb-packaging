@@ -1,0 +1,15 @@
+Source: cod-tools
+Priority: extra
+Maintainer: Andrius Merkys <andrius.merkys@gmail.com>
+Build-Depends: debhelper (>= 9.0.0)
+Standards-Version: 3.9.8
+Section: libs
+
+Package: libcexceptions0
+Section: libdevel
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: C exception handling library
+ Wrappers for C functions, allowing usage of try ... catch ... blocks in
+ C language. Wrapped functions include memory allocation, standard I/O
+ and strdup.
