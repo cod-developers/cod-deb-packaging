@@ -9,14 +9,14 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
+SRC_DIR = src/components/codcif
+
 %:
-	dh $@
+	dh $@ --sourcedirectory ${SRC_DIR}
 
-build:
-	${MAKE} LIB_DIRS= LIBFLAGS="-lcexceptions -lgetoptions"
-
-clean:
-	${MAKE} distclean
+override_dh_auto_build:
+	${MAKE} LIB_DIRS= LIBFLAGS="-lcexceptions -lgetoptions" \
+		--directory ${SRC_DIR}
 
 override_dh_auto_install:
-	${MAKE} install PREFIX=debian/codcif/usr
+	${MAKE} install PREFIX=../../../debian/codcif/usr --directory ${SRC_DIR}
