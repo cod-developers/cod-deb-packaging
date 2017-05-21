@@ -29,7 +29,7 @@ endif
 
 #------------------------------------------------------------------------------
 
-.PHONY: original orig signed cleanAll distclean lint lintian
+.PHONY: original orig signed cleanAll distclean lint lintian origclean
 
 original orig: ${ORIG_TAR_GZ}
 
@@ -54,7 +54,10 @@ lint lintian:
 	-lintian --pedantic ${CHANGES_FILE}
 	-lintian --pedantic ${DEB_FILE}
 
-cleanAll distclean:
+cleanAll distclean: origclean
+	rm -f ${ORIG_TAR_GZ} 
+
+origclean:
 	rm -rf source ${PKGNAME} ${PROJECT}
-	rm -f ${ORIG_TAR_GZ} ${DEBIAN_TAR_GZ} ${DEBIAN_TAR_XZ}
+	rm -f ${DEBIAN_TAR_GZ} ${DEBIAN_TAR_XZ}
 	rm -f *.deb *.dsc *.changes *.build
