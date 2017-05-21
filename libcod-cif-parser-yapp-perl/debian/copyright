@@ -1,6 +1,6 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: cod-tools
-Source: <svn://www.crystallography.net/cod-tools/trunk@4783>
+Source: <svn://www.crystallography.net/cod-tools/trunk@5291>
 
 Files: *
 Copyright: 2008 Saulius Gražulis <grazulis@ibt.lt>
