@@ -20,3 +20,14 @@ Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: Command line argument processing library for C
  <insert long description, indented with spaces>
+
+Package: libcod-cif-parser-yapp-perl
+Section: perl
+Architecture: all
+Depends: ${perl:Depends}, ${misc:Depends}, libcod-precision-perl,
+    libcod-usermessage-perl
+Description: error-fixing CIF 1.1 parser - YAPP implementation
+ COD::CIF::Parser:Yapp, YAPP implementation of error-fixing
+ Crystallographic Information Format (CIF) parser, which is developed by
+ the Crystallography Open Database. A CIF format file is represented by
+ an array of data blocks, where each data block is represented by a hash.
