@@ -10,6 +10,7 @@
 #export DH_VERBOSE=1
 
 SRC_DIR = src/externals/cexceptions
+vendorarch = $(shell perl -le 'use Config; print $$Config{vendorarch}')
 vendorlib  = $(shell perl -le 'use Config; print $$Config{vendorlib}')
 
 %:
@@ -21,6 +22,7 @@ override_dh_auto_build:
 	${MAKE} PACKAGE=getoptions EXTRA_LIB_DIRS=../cexceptions/lib \
 		--directory src/externals/getoptions
 	${MAKE} --directory src/components/codcif
+	${MAKE} --directory src/lib/perl5/COD/CIF/Parser/Bison
 	${MAKE} --directory src/lib/perl5/COD/CIF/Parser/Yapp
 
 override_dh_auto_test:
@@ -35,6 +37,12 @@ override_dh_auto_install:
 		--directory src/externals/getoptions
 	${MAKE} install PREFIX=../../../debian/codcif/usr \
 		--directory src/components/codcif
+	mkdir -p debian/libcod-cif-parser-bison-perl/${vendorlib}/COD/CIF/Parser
+	mkdir -p debian/libcod-cif-parser-bison-perl/${vendorarch}/auto/COD/CIF/Parser/Bison
+	install --mode 640 src/lib/perl5/COD/CIF/Parser/Bison/lib/COD/CIF/Parser/Bison.pm \
+	    debian/libcod-cif-parser-bison-perl/${vendorlib}/COD/CIF/Parser/
+	install --mode 640 src/lib/perl5/COD/CIF/Parser/Bison/lib/auto/COD/CIF/Parser/Bison/Bison.so \
+	    debian/libcod-cif-parser-bison-perl/${vendorarch}/auto/COD/CIF/Parser/Bison/
 	mkdir -p debian/libcod-cif-parser-yapp-perl/${vendorlib}/COD/CIF/Parser
 	install --mode 640 src/lib/perl5/COD/CIF/Parser/Yapp/lib/COD/CIF/Parser/Yapp.pm \
 	    debian/libcod-cif-parser-yapp-perl/${vendorlib}/COD/CIF/Parser/
