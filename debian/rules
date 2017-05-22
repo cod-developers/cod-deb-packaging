@@ -9,25 +9,14 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-SRC_DIR = src/externals/cexceptions
 vendorarch = $(shell perl -le 'use Config; print $$Config{vendorarch}')
 vendorlib  = $(shell perl -le 'use Config; print $$Config{vendorlib}')
 
 %:
-	dh $@ --sourcedirectory ${SRC_DIR}
+	dh $@ --with python2
 
-override_dh_auto_build:
-	${MAKE} PACKAGE=cexceptions EXTRA_LIB_DIRS=lib \
-		--directory src/externals/cexceptions
-	${MAKE} PACKAGE=getoptions EXTRA_LIB_DIRS=../cexceptions/lib \
-		--directory src/externals/getoptions
-	${MAKE} --directory src/components/codcif
-	${MAKE} --directory src/lib/perl5/COD/CIF/Parser/Bison
-	${MAKE} --directory src/lib/perl5/COD/CIF/Parser/Yapp
-	${MAKE} --directory src/components/pycodcif
-
-override_dh_auto_test:
-	${MAKE} PACKAGE=cexceptions EXTRA_LIB_DIRS=lib test --directory ${SRC_DIR}
+# Skipping auto clean as it gets stuck in an infinite recursion
+override_dh_auto_clean:
 
 override_dh_auto_install:
 	${MAKE} install PREFIX=../../../debian/libcexceptions0/usr \
