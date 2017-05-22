@@ -1,0 +1,7 @@
+# The following symbolic link is used neither in build nor test
+# process, thus it should be ignored:
+cod-tools source: source-contains-unsafe-symlink data/COD-log-statistics/inputs/cod
+# The following JavaScript files are used neither in build nor test
+# process, thus they should be ignored:
+cod-tools source: source-is-missing doc/IUCr/names_files/menupopup.js
+cod-tools source: source-is-missing doc/IUCr/names_files/overlib.js
