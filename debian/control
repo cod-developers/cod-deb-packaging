@@ -14,9 +14,9 @@ Section: libdevel
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: C exception handling library
- Wrappers for C functions, allowing usage of try ... catch ... blocks in
- C language. Wrapped functions include memory allocation, standard I/O
- and strdup.
+ Wrappers for C functions, allowing usage of try ... catch ... blocks
+ in C language. Wrapped functions include memory allocation, standard
+ I/O and strdup.
 
 Package: libgetoptions0
 Section: libdevel
@@ -29,10 +29,10 @@ Package: codcif
 Section: libdevel
 Architecture: any
 Depends: ${misc:Depends}
-Description: error-fixing CIF 1.1 parser
- Parser for Crystallographic Information Format (CIF), written in C
- language. A CIF format file is represented by an array of data blocks,
- where each data block is represented by a CIF struct.
+Description: error-correcting CIF parser
+ Parser for Crystallographic Information Format (CIF) 1.1 and 2.0,
+ written in C language. A CIF format file is represented by an array
+ of data blocks, where each data block is represented by a CIF struct.
 
 Package: libcod-precision-perl
 Section: perl
@@ -47,8 +47,8 @@ Section: perl
 Architecture: all
 Depends: ${misc:Depends}, ${perl:Depends}
 Description: COD message formatting module for Perl language
- COD::UserMessage, module for formatting error/warning/note messages in
- a style, defined by Crystallography Open Database.
+ COD::UserMessage, module for formatting error/warning/note messages
+ in a style, defined by Crystallography Open Database.
  .
  In short, the format of generated messages is the following:
  <program name>: <location>: <STATUS>, <message body>.
@@ -57,35 +57,37 @@ Package: libcod-cif-parser-bison-perl
 Section: perl
 Architecture: any
 Depends: ${shlibs:Depends}, ${perl:Depends}, ${misc:Depends},
-    ${misc:Pre-Depends}, libcod-precision-perl, libcod-usermessage-perl
-Description: error-fixing CIF 1.1 parser - Perl bindings
- COD::CIF::Parser:Bison, Perl bindings for Crystallographic Information
- Format (CIF) parser, which is written in C language, and developed by
- the Crystallography Open Database. A CIF format file is represented by
- an array of data blocks, where each data block is represented by a hash.
+ ${misc:Pre-Depends}, libcod-precision-perl, libcod-usermessage-perl
+Description: error-correcting CIF parser - Perl bindings
+ COD::CIF::Parser:Bison, Perl bindings for Crystallographic
+ Information Format (CIF) 1.1 and 2.0 parser, which is written in C
+ language, and developed by the Crystallography Open Database. A CIF
+ format file is represented by an array of data blocks, where each
+ data block is represented by a hash.
 
 Package: libcod-cif-parser-yapp-perl
 Section: perl
 Architecture: all
 Depends: ${perl:Depends}, ${misc:Depends}, libcod-precision-perl,
-    libcod-usermessage-perl
-Description: error-fixing CIF 1.1 parser - YAPP implementation
- COD::CIF::Parser:Yapp, YAPP implementation of error-fixing
- Crystallographic Information Format (CIF) parser, which is developed by
- the Crystallography Open Database. A CIF format file is represented by
- an array of data blocks, where each data block is represented by a hash.
+ libcod-usermessage-perl
+Description: error-correcting CIF parser - YAPP implementation
+ COD::CIF::Parser:Yapp, YAPP implementation of error-correcting
+ Crystallographic Information Format (CIF) 1.1 and 2.0 parser, which
+ is developed by the Crystallography Open Database. A CIF format file
+ is represented by an array of data blocks, where each data block is
+ represented by a hash.
 
 Package: pycodcif
 Section: libdevel
 Architecture: any
 Depends: ${misc:Depends}, ${python:Depends}, ${shlibs:Depends},
  ${python:Versions}
-Description: error-fixing CIF 1.1 parser - Python bindings
- Python bindings for Crystallographic Information Format (CIF) parser,
- which is written in C language, which is written in C language, and
- developed by the Crystallography Open Database. A CIF format file is
- represented by a list of data blocks, where each data block is
- represented by a dictionary.
+Description: error-correcting CIF parser - Python bindings
+ Python bindings for Crystallographic Information Format (CIF) 1.1 and
+ 2.0 parser, which is written in C language, and developed by the
+ Crystallography Open Database. A CIF format file is represented by a
+ list of data blocks, where each data block is represented by a
+ dictionary.
 
 Package: cod-tools
 Section: perl
@@ -99,4 +101,4 @@ Depends: curl, gawk, libcapture-tiny-perl, libcarp-assert-perl,
  openbabel, perl, sqlite3, tree, ${perl:Depends}, ${misc:Depends}
 Description: tools for manipulating CIF format files
  Package provides a set of tools for manipulating Crystallographic
- Information Format (CIF) files, written in Perl.
+ Information Format (CIF) 1.1 and 2.0 files, written in Perl.
