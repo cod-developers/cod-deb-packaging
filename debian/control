@@ -1,9 +1,9 @@
 Source: cod-tools
 Priority: extra
 Maintainer: Andrius Merkys <andrius.merkys@gmail.com>
-Build-Depends: autoconf, bison, debhelper (>= 9.0.0), flex, gcc,
+Build-Depends: autoconf, bison, debhelper (>= 9.0.0), flex,
  libcarp-assert-perl, libmodule-scandeps-perl, libparse-yapp-perl,
- make, moreutils, perl, python-dev, swig
+ moreutils, perl, python-dev, swig
 Standards-Version: 3.9.8
 Section: misc
 Vcs-Svn: svn://www.crystallography.net/cod-tools
