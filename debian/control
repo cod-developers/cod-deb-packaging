@@ -7,6 +7,7 @@ Build-Depends: autoconf, bison, debhelper (>= 9.0.0), flex, gcc,
 Standards-Version: 3.9.8
 Section: misc
 Vcs-Svn: svn://www.crystallography.net/cod-tools
+Homepage: http://wiki.crystallography.net/cod-tools
 
 Package: libcexceptions0
 Section: libdevel
