@@ -37,12 +37,20 @@ override_dh_auto_install:
 		--directory src/externals/getoptions
 	${MAKE} install PREFIX=../../../debian/codcif/usr \
 		--directory src/components/codcif
+
 	mkdir -p debian/libcod-cif-parser-bison-perl/${vendorlib}/COD/CIF/Parser
 	mkdir -p debian/libcod-cif-parser-bison-perl/${vendorarch}/auto/COD/CIF/Parser/Bison
 	install --mode 640 src/lib/perl5/COD/CIF/Parser/Bison/lib/COD/CIF/Parser/Bison.pm \
 	    debian/libcod-cif-parser-bison-perl/${vendorlib}/COD/CIF/Parser/
 	install --mode 640 src/lib/perl5/COD/CIF/Parser/Bison/lib/auto/COD/CIF/Parser/Bison/Bison.so \
 	    debian/libcod-cif-parser-bison-perl/${vendorarch}/auto/COD/CIF/Parser/Bison/
+
 	mkdir -p debian/libcod-cif-parser-yapp-perl/${vendorlib}/COD/CIF/Parser
 	install --mode 640 src/lib/perl5/COD/CIF/Parser/Yapp/lib/COD/CIF/Parser/Yapp.pm \
 	    debian/libcod-cif-parser-yapp-perl/${vendorlib}/COD/CIF/Parser/
+
+	mkdir -p debian/libcod-precision-perl/usr/share/perl5/COD/
+	install src/lib/perl5/COD/Precision.pm debian/libcod-precision-perl/usr/share/perl5/COD/
+
+	mkdir -p debian/libcod-usermessage-perl/usr/share/perl5/COD/
+	install src/lib/perl5/COD/UserMessage.pm debian/libcod-usermessage-perl/usr/share/perl5/COD/

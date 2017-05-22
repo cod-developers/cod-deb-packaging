@@ -30,6 +30,25 @@ Description: error-fixing CIF 1.1 parser
  language. A CIF format file is represented by an array of data blocks,
  where each data block is represented by a CIF struct.
 
+Package: libcod-precision-perl
+Section: perl
+Architecture: all
+Depends: ${misc:Depends}, ${perl:Depends}
+Description: COD precision handling module for Perl language
+ COD::Precision, module for handling precision in Crystallographic
+ Information Format (CIF) notation.
+
+Package: libcod-usermessage-perl
+Section: perl
+Architecture: all
+Depends: ${misc:Depends}, ${perl:Depends}
+Description: COD message formatting module for Perl language
+ COD::UserMessage, module for formatting error/warning/note messages in
+ a style, defined by Crystallography Open Database.
+ .
+ In short, the format of generated messages is the following:
+ <program name>: <location>: <STATUS>, <message body>.
+
 Package: libcod-cif-parser-bison-perl
 Section: perl
 Architecture: any
