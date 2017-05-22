@@ -70,3 +70,14 @@ Description: error-fixing CIF 1.1 parser - YAPP implementation
  Crystallographic Information Format (CIF) parser, which is developed by
  the Crystallography Open Database. A CIF format file is represented by
  an array of data blocks, where each data block is represented by a hash.
+
+Package: pycodcif
+Section: libdevel
+Architecture: any
+Depends: ${misc:Depends}, ${python:Depends}, ${shlibs:Depends}, ${python:Versions}
+Description: error-fixing CIF 1.1 parser - Python bindings
+ Python bindings for Crystallographic Information Format (CIF) parser,
+ which is written in C language, which is written in C language, and
+ developed by the Crystallography Open Database. A CIF format file is
+ represented by a list of data blocks, where each data block is
+ represented by a dictionary.
