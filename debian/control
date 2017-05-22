@@ -85,3 +85,15 @@ Description: error-fixing CIF 1.1 parser - Python bindings
  developed by the Crystallography Open Database. A CIF format file is
  represented by a list of data blocks, where each data block is
  represented by a dictionary.
+
+Package: cod-tools
+Section: perl
+Architecture: all
+Depends: libcod-cif-parser-bison-perl, sqlite3, libdbi-perl,
+ libdbd-mysql-perl, libdbd-sqlite3-perl, libcapture-tiny-perl,
+ libcarp-assert-perl, libdigest-sha-perl, libhtml-parser-perl,
+ libparse-yapp-perl, openbabel, curl, libhtml-parser-perl, tree, gawk,
+ libwww-curl-perl, libjson-perl, ${perl:Depends}, ${misc:Depends}
+Description: tools for manipulating CIF format files
+ Package provides a set of tools for manipulating Crystallographic
+ Information Format (CIF) files, written in Perl.
