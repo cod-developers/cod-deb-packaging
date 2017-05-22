@@ -1,9 +1,12 @@
 Source: cod-tools
 Priority: extra
 Maintainer: Andrius Merkys <andrius.merkys@gmail.com>
-Build-Depends: debhelper (>= 9.0.0)
+Build-Depends: debhelper (>= 9.0.0), gcc, bison, flex, perl,
+ libparse-yapp-perl, libcarp-assert-perl, swig, python-dev,
+ libmodule-scandeps-perl, moreutils
 Standards-Version: 3.9.8
-Section: libs
+Section: misc
+Vcs-Svn: svn://www.crystallography.net/cod-tools
 
 Package: libcexceptions0
 Section: libdevel
@@ -74,7 +77,8 @@ Description: error-fixing CIF 1.1 parser - YAPP implementation
 Package: pycodcif
 Section: libdevel
 Architecture: any
-Depends: ${misc:Depends}, ${python:Depends}, ${shlibs:Depends}, ${python:Versions}
+Depends: ${misc:Depends}, ${python:Depends}, ${shlibs:Depends},
+ ${python:Versions}
 Description: error-fixing CIF 1.1 parser - Python bindings
  Python bindings for Crystallographic Information Format (CIF) parser,
  which is written in C language, which is written in C language, and
