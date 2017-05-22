@@ -1,9 +1,9 @@
 Source: cod-tools
 Priority: extra
 Maintainer: Andrius Merkys <andrius.merkys@gmail.com>
-Build-Depends: debhelper (>= 9.0.0), gcc, bison, flex, perl,
- libparse-yapp-perl, libcarp-assert-perl, swig, python-dev,
- libmodule-scandeps-perl, moreutils
+Build-Depends: autoconf, bison, debhelper (>= 9.0.0), flex, gcc,
+ libcarp-assert-perl, libmodule-scandeps-perl, libparse-yapp-perl,
+ make, moreutils, perl, python-dev, swig
 Standards-Version: 3.9.8
 Section: misc
 Vcs-Svn: svn://www.crystallography.net/cod-tools
@@ -89,11 +89,13 @@ Description: error-fixing CIF 1.1 parser - Python bindings
 Package: cod-tools
 Section: perl
 Architecture: all
-Depends: libcod-cif-parser-bison-perl, sqlite3, libdbi-perl,
- libdbd-mysql-perl, libdbd-sqlite3-perl, libcapture-tiny-perl,
- libcarp-assert-perl, libdigest-sha-perl, libhtml-parser-perl,
- libparse-yapp-perl, openbabel, curl, libhtml-parser-perl, tree, gawk,
- libwww-curl-perl, libjson-perl, ${perl:Depends}, ${misc:Depends}
+Depends: curl, gawk, libcapture-tiny-perl, libcarp-assert-perl,
+ libclone-perl, libcod-cif-parser-bison-perl,
+ libcod-cif-parser-yapp-perl, libcod-precision-perl,
+ libcod-usermessage-perl, libdbd-mysql-perl, libdbd-sqlite3-perl,
+ libdbi-perl, libdigest-sha-perl, libhtml-parser-perl, libjson-perl,
+ libxml-simple-perl, liblist-moreutils-perl, libwww-curl-perl,
+ openbabel, perl, sqlite3, tree, ${perl:Depends}, ${misc:Depends}
 Description: tools for manipulating CIF format files
  Package provides a set of tools for manipulating Crystallographic
  Information Format (CIF) files, written in Perl.
