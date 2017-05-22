@@ -52,7 +52,6 @@ signed:
 lint lintian:
 	-lintian --pedantic ${DSC_FILE}
 	-lintian --pedantic ${CHANGES_FILE}
-	-lintian --pedantic ${DEB_FILE}
 
 cleanAll distclean: origclean
 	rm -f ${ORIG_TAR_GZ} 
