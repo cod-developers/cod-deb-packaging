@@ -78,7 +78,7 @@ Description: error-correcting CIF parser - YAPP implementation
  represented by a hash.
 
 Package: python-pycodcif
-Section: libdevel
+Section: python
 Architecture: any
 Depends: ${misc:Depends}, ${python:Depends}, ${shlibs:Depends},
  ${python:Versions}
