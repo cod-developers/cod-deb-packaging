@@ -77,7 +77,7 @@ Description: error-correcting CIF parser - YAPP implementation
  is represented by an array of data blocks, where each data block is
  represented by a hash.
 
-Package: pycodcif
+Package: python-pycodcif
 Section: libdevel
 Architecture: any
 Depends: ${misc:Depends}, ${python:Depends}, ${shlibs:Depends},

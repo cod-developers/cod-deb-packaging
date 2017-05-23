@@ -39,7 +39,7 @@ override_dh_auto_install:
 	mkdir -p debian/libcod-usermessage-perl/usr/share/perl5/COD/
 	install src/lib/perl5/COD/UserMessage.pm debian/libcod-usermessage-perl/usr/share/perl5/COD/
 
-	${MAKE} -f Makelocal-SWIG-module install PREFIX=../../../debian/pycodcif/usr \
+	${MAKE} -f Makelocal-SWIG-module install PREFIX=../../../debian/python-pycodcif/usr \
 		--directory src/components/pycodcif
 
 	# Installing all cod-tools by default except SPGLib.pm and
