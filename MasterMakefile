@@ -33,11 +33,8 @@ endif
 
 original orig: ${ORIG_TAR_GZ}
 
-${ORIG_TAR_GZ}: ${CHANGELOG}
-	./fetch-source
-	mv source ${PKGNAME}
-	tar -c ${PKGNAME} | gzip > ${ORIG_TAR_GZ}
-	rm -rf ${PKGNAME}
+${ORIG_TAR_GZ}:
+	${MAKE} -f debian/rules get-orig-source
 
 ${DEBIAN_TAR_GZ}: ${ORIG_TAR_GZ}
 	zcat $< | tar -xv
