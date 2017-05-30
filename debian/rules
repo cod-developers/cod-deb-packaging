@@ -1,0 +1,54 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Sample debian/rules that uses debhelper.
+# This file was originally written by Joey Hess and Craig Small.
+# As a special exception, when this file is copied by dh-make into a
+# dh-make output file, you may use that output file without restriction.
+# This special exception was added by Craig Small in version 0.37 of dh-make.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+vendorarch = $(shell perl -le 'use Config; print $$Config{vendorarch}')
+vendorlib  = $(shell perl -le 'use Config; print $$Config{vendorlib}')
+
+%:
+	dh $@ --with python2
+
+# Skipping auto clean as it gets stuck in an infinite recursion
+override_dh_auto_clean:
+
+override_dh_auto_install:
+	${MAKE} install PREFIX=../../../debian/libcexceptions0/usr \
+		PACKAGE=cexceptions EXTRA_LIB_DIRS=lib \
+		--directory src/externals/cexceptions
+	${MAKE} install PREFIX=../../../debian/libgetoptions0/usr \
+		PACKAGE=getoptions EXTRA_LIB_DIRS=lib \
+		--directory src/externals/getoptions
+	${MAKE} install PREFIX=../../../debian/codcif/usr \
+		--directory src/components/codcif
+
+	${MAKE} install-libcod-cif-parser-bison-perl \
+		PREFIX=debian/libcod-cif-parser-bison-perl/usr
+	${MAKE} install-libcod-cif-parser-yapp-perl \
+		PREFIX=debian/libcod-cif-parser-yapp-perl/usr
+
+	mkdir -p debian/libcod-precision-perl/usr/share/perl5/COD/
+	install src/lib/perl5/COD/Precision.pm debian/libcod-precision-perl/usr/share/perl5/COD/
+
+	mkdir -p debian/libcod-usermessage-perl/usr/share/perl5/COD/
+	install src/lib/perl5/COD/UserMessage.pm debian/libcod-usermessage-perl/usr/share/perl5/COD/
+
+	${MAKE} -f Makelocal-SWIG-module install PREFIX=../../../debian/python-pycodcif/usr \
+		--directory src/components/pycodcif
+
+	# Installing all cod-tools by default except SPGLib.pm and
+	# cif_find_symmetry:
+	${MAKE} install-cod-tools PREFIX=debian/cod-tools/usr
+	find debian/cod-tools/usr -name SPGLib.pm -exec rm {} \;
+	find debian/cod-tools/usr -name cif_find_symmetry -exec rm {} \;
+
+get-orig-source:
+	svn export -r5298 svn://www.crystallography.net/cod-tools/trunk cod-tools-1.0
+	tar -c cod-tools-1.0 | gzip > cod-tools_1.0.orig.tar.gz
+	rm -rf cod-tools-1.0

@@ -1,0 +1,104 @@
+Source: cod-tools
+Priority: extra
+Maintainer: Andrius Merkys <andrius.merkys@gmail.com>
+Build-Depends: autoconf, bison, debhelper (>= 9.0.0), flex,
+ libcarp-assert-perl, libmodule-scandeps-perl, libparse-yapp-perl,
+ moreutils, perl, python-dev, swig
+Standards-Version: 3.9.8
+Section: misc
+Vcs-Svn: svn://www.crystallography.net/cod-tools
+Homepage: http://wiki.crystallography.net/cod-tools
+
+Package: libcexceptions0
+Section: libdevel
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: C exception handling library
+ Wrappers for C functions, allowing usage of try ... catch ... blocks
+ in C language. Wrapped functions include memory allocation, standard
+ I/O and strdup.
+
+Package: libgetoptions0
+Section: libdevel
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Command line argument processing library for C
+ <insert long description, indented with spaces>
+
+Package: codcif
+Section: libdevel
+Architecture: any
+Depends: ${misc:Depends}
+Description: error-correcting CIF parser
+ Parser for Crystallographic Information Format (CIF) 1.1 and 2.0,
+ written in C language. A CIF format file is represented by an array
+ of data blocks, where each data block is represented by a CIF struct.
+
+Package: libcod-precision-perl
+Section: perl
+Architecture: all
+Depends: ${misc:Depends}, ${perl:Depends}
+Description: COD precision handling module for Perl language
+ COD::Precision, module for handling precision in Crystallographic
+ Information Format (CIF) notation.
+
+Package: libcod-usermessage-perl
+Section: perl
+Architecture: all
+Depends: ${misc:Depends}, ${perl:Depends}
+Description: COD message formatting module for Perl language
+ COD::UserMessage, module for formatting error/warning/note messages
+ in a style, defined by Crystallography Open Database.
+ .
+ In short, the format of generated messages is the following:
+ <program name>: <location>: <STATUS>, <message body>.
+
+Package: libcod-cif-parser-bison-perl
+Section: perl
+Architecture: any
+Depends: ${shlibs:Depends}, ${perl:Depends}, ${misc:Depends},
+ ${misc:Pre-Depends}, libcod-precision-perl, libcod-usermessage-perl
+Description: error-correcting CIF parser - Perl bindings
+ COD::CIF::Parser:Bison, Perl bindings for Crystallographic
+ Information Format (CIF) 1.1 and 2.0 parser, which is written in C
+ language, and developed by the Crystallography Open Database. A CIF
+ format file is represented by an array of data blocks, where each
+ data block is represented by a hash.
+
+Package: libcod-cif-parser-yapp-perl
+Section: perl
+Architecture: all
+Depends: ${perl:Depends}, ${misc:Depends}, libcod-precision-perl,
+ libcod-usermessage-perl
+Description: error-correcting CIF parser - YAPP implementation
+ COD::CIF::Parser:Yapp, YAPP implementation of error-correcting
+ Crystallographic Information Format (CIF) 1.1 and 2.0 parser, which
+ is developed by the Crystallography Open Database. A CIF format file
+ is represented by an array of data blocks, where each data block is
+ represented by a hash.
+
+Package: python-pycodcif
+Section: python
+Architecture: any
+Depends: ${misc:Depends}, ${python:Depends}, ${shlibs:Depends},
+ ${python:Versions}
+Description: error-correcting CIF parser - Python bindings
+ Python bindings for Crystallographic Information Format (CIF) 1.1 and
+ 2.0 parser, which is written in C language, and developed by the
+ Crystallography Open Database. A CIF format file is represented by a
+ list of data blocks, where each data block is represented by a
+ dictionary.
+
+Package: cod-tools
+Section: perl
+Architecture: all
+Depends: curl, gawk, libcapture-tiny-perl, libcarp-assert-perl,
+ libclone-perl, libcod-cif-parser-bison-perl,
+ libcod-cif-parser-yapp-perl, libcod-precision-perl,
+ libcod-usermessage-perl, libdbd-mysql-perl, libdbd-sqlite3-perl,
+ libdbi-perl, libdigest-sha-perl, libhtml-parser-perl, libjson-perl,
+ libxml-simple-perl, liblist-moreutils-perl, libwww-curl-perl,
+ openbabel, perl, sqlite3, tree, ${perl:Depends}, ${misc:Depends}
+Description: tools for manipulating CIF format files
+ Package provides a set of tools for manipulating Crystallographic
+ Information Format (CIF) 1.1 and 2.0 files, written in Perl.

@@ -1,3 +1,0 @@
-# The following symbolic link is used neither in build nor test process,
-# thus it should be ignored:
-libcod-cif-parser-bison-perl source: source-contains-unsafe-symlink data/COD-log-statistics/inputs/cod

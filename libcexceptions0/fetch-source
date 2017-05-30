@@ -1,3 +1,0 @@
-#!/bin/bash
-
-svn export -r5291 svn://www.crystallography.net/cod-tools/trunk/src/externals/cexceptions source

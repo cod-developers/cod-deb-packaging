@@ -1,4 +1,4 @@
-PROJECT   = $(notdir $(shell pwd))
+PROJECT   = cod-tools
 CHANGELOG = debian/changelog
 ARCH      = $(shell dpkg-deb --version | head -n 1 | perl -lne 'print $$1 if /\((.+?)\)/')
 
@@ -29,15 +29,12 @@ endif
 
 #------------------------------------------------------------------------------
 
-.PHONY: original orig signed cleanAll distclean lint lintian
+.PHONY: original orig signed cleanAll distclean lint lintian origclean
 
 original orig: ${ORIG_TAR_GZ}
 
-${ORIG_TAR_GZ}: ${CHANGELOG}
-	./fetch-source
-	mv source ${PKGNAME}
-	tar -c ${PKGNAME} | gzip > ${ORIG_TAR_GZ}
-	rm -rf ${PKGNAME}
+${ORIG_TAR_GZ}:
+	${MAKE} -f debian/rules get-orig-source
 
 ${DEBIAN_TAR_GZ}: ${ORIG_TAR_GZ}
 	zcat $< | tar -xv
@@ -52,9 +49,11 @@ signed:
 lint lintian:
 	-lintian --pedantic ${DSC_FILE}
 	-lintian --pedantic ${CHANGES_FILE}
-	-lintian --pedantic ${DEB_FILE}
 
-cleanAll distclean:
+cleanAll distclean: origclean
+	rm -f ${ORIG_TAR_GZ} 
+
+origclean:
 	rm -rf source ${PKGNAME} ${PROJECT}
-	rm -f ${ORIG_TAR_GZ} ${DEBIAN_TAR_GZ} ${DEBIAN_TAR_XZ}
+	rm -f ${DEBIAN_TAR_GZ} ${DEBIAN_TAR_XZ}
 	rm -f *.deb *.dsc *.changes *.build

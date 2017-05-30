@@ -1,4 +1,0 @@
-test tests check: ${ORIG_TAR_GZ}
-	zcat $< | tar -xv
-	${MAKE} -C ${PKGNAME} tests LIBS=
-	rm -rf ${PKGNAME}

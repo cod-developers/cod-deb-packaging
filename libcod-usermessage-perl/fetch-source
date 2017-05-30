@@ -1,3 +1,0 @@
-#!/bin/bash
-
-svn export -r4775 svn://www.crystallography.net/cod-tools/trunk/src/lib/perl5/COD source
