@@ -4,7 +4,7 @@ Maintainer: Andrius Merkys <andrius.merkys@gmail.com>
 Build-Depends: autoconf, bison, debhelper (>= 9.0.0), dh-python, flex,
  libcarp-assert-perl, libmodule-scandeps-perl, libparse-yapp-perl,
  moreutils, perl, python-dev, swig
-Standards-Version: 3.9.8
+Standards-Version: 3.9.7
 Section: misc
 Vcs-Svn: svn://www.crystallography.net/cod-tools
 Homepage: http://wiki.crystallography.net/cod-tools
