@@ -1,16 +1,8 @@
 #!/usr/bin/make -f
 # -*- makefile -*-
-# Sample debian/rules that uses debhelper.
-# This file was originally written by Joey Hess and Craig Small.
-# As a special exception, when this file is copied by dh-make into a
-# dh-make output file, you may use that output file without restriction.
-# This special exception was added by Craig Small in version 0.37 of dh-make.
 
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
-
-vendorarch = $(shell perl -le 'use Config; print $$Config{vendorarch}')
-vendorlib  = $(shell perl -le 'use Config; print $$Config{vendorlib}')
 
 %:
 	dh $@ --with python2
@@ -34,19 +26,23 @@ override_dh_auto_install:
 		PREFIX=debian/libcod-cif-parser-yapp-perl/usr
 
 	mkdir -p debian/libcod-precision-perl/usr/share/perl5/COD/
-	install src/lib/perl5/COD/Precision.pm debian/libcod-precision-perl/usr/share/perl5/COD/
+	install src/lib/perl5/COD/Precision.pm \
+		debian/libcod-precision-perl/usr/share/perl5/COD/
 
 	mkdir -p debian/libcod-usermessage-perl/usr/share/perl5/COD/
-	install src/lib/perl5/COD/UserMessage.pm debian/libcod-usermessage-perl/usr/share/perl5/COD/
+	install src/lib/perl5/COD/UserMessage.pm \
+		debian/libcod-usermessage-perl/usr/share/perl5/COD/
 
-	${MAKE} -f Makelocal-SWIG-module install PREFIX=../../../debian/python-pycodcif/usr \
+	${MAKE} -f Makelocal-SWIG-module install \
+		PREFIX=../../../debian/python-pycodcif/usr \
 		--directory src/components/pycodcif
 
-	# Installing all cod-tools by default except SPGLib.pm and
-	# cif_find_symmetry:
+	# Installing all cod-tools scipts and modules by default except
+	# SPGLib.pm and cif_find_symmetry:
 	${MAKE} install-cod-tools PREFIX=debian/cod-tools/usr
 	find debian/cod-tools/usr -name SPGLib.pm -exec rm {} \;
 	find debian/cod-tools/usr -name cif_find_symmetry -exec rm {} \;
 
 get-orig-source:
-	wget http://www.crystallography.net/cod/archives/2017/software/cod-tools/cod-tools-2.0.tar.gz -O cod-tools_2.0.orig.tar.gz
+	wget http://www.crystallography.net/cod/archives/2017/software/cod-tools/cod-tools-2.0.tar.gz \
+		-O cod-tools_2.0.orig.tar.gz
