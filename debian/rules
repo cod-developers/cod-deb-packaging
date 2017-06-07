@@ -49,6 +49,4 @@ override_dh_auto_install:
 	find debian/cod-tools/usr -name cif_find_symmetry -exec rm {} \;
 
 get-orig-source:
-	svn export -r5298 svn://www.crystallography.net/cod-tools/trunk cod-tools-1.0
-	tar -c cod-tools-1.0 | gzip > cod-tools_1.0.orig.tar.gz
-	rm -rf cod-tools-1.0
+	wget http://www.crystallography.net/cod/archives/2017/software/cod-tools/cod-tools-2.0.tar.gz -O cod-tools_2.0.orig.tar.gz
