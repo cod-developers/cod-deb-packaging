@@ -1,5 +1,5 @@
 cod-tools (2.0-1) unstable; urgency=low
 
-  * Initial release.
+  * Initial release. Closes: #864355
 
  -- Andrius Merkys <andrius.merkys@gmail.com>  Sun, 21 May 2017 19:21:11 +0300
