@@ -67,7 +67,7 @@ Description: error-correcting CIF parser - Perl bindings
  data block is represented by a hash.
 
 Package: libcod-cif-parser-yapp-perl
-Section: science
+Section: perl
 Architecture: all
 Depends: ${perl:Depends}, ${misc:Depends}, libcod-precision-perl,
  libcod-usermessage-perl
@@ -91,7 +91,7 @@ Description: error-correcting CIF parser - Python bindings
  dictionary.
 
 Package: cod-tools
-Section: perl
+Section: science
 Architecture: all
 Depends: curl, gawk, libcapture-tiny-perl, libcarp-assert-perl,
  libclone-perl, libcod-cif-parser-bison-perl,
