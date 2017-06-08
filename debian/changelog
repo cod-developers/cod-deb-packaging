@@ -1,3 +1,14 @@
+cod-tools (2.0-2) unstable; urgency=low
+
+  * Fixing typos in Perl module names for libcod-cif-parser-bison-perl
+    and libcod-cif-parser-yapp-perl.
+  * Putting cod-tools package to science section.
+  * Updating Standards-Version to 3.9.8.
+  * Removing colons (':') from ends of messages in
+    *.lintian-overrides.
+
+ -- Andrius Merkys <andrius.merkys@gmail.com>  Thu, 08 Jun 2017 15:13:54 +0300
+
 cod-tools (2.0-1) unstable; urgency=low
 
   * Initial release. Closes: #864355
