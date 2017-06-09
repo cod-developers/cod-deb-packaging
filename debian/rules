@@ -43,6 +43,9 @@ override_dh_auto_install:
 	find debian/cod-tools/usr -name SPGLib.pm -exec rm {} \;
 	find debian/cod-tools/usr -name cif_find_symmetry -exec rm {} \;
 
+override_dh_installchangelogs:
+	dh_installchangelogs CHANGELOG
+
 get-orig-source:
 	wget http://www.crystallography.net/cod/archives/2017/software/cod-tools/cod-tools-2.0.tar.gz \
 		-O cod-tools_2.0.orig.tar.gz
