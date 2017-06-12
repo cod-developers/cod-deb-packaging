@@ -1,0 +1,3 @@
+version=4
+
+http://www.crystallography.net/cod/archives/(\d{4})/software/cod-tools/cod-tools-(\d+(?:\.\d+){0,2})\.(?:tbz2|tar\.gz)

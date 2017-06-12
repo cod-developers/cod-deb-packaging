@@ -1,3 +1,9 @@
+cod-tools (2.0-5) unstable; urgency=low
+
+  * Adding debian/watch file.
+
+ -- Andrius Merkys <andrius.merkys@gmail.com>  Mon, 12 Jun 2017 09:57:56 +0300
+
 cod-tools (2.0-4) unstable; urgency=low
 
   * Adding upstream changelog to packages.
